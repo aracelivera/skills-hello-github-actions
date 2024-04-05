@@ -3,4 +3,8 @@ on:
   pull_request:
     types: [opened]
 permissions:
-  pull-requests: write
+  pull-requests: write # gives the workflow permission to write to pull requests. This is needed to create the welcome comment.
+jobs:
+  build:
+    name: Post welcome comment
+    runs-on: ubuntu-latest
